@@ -7,6 +7,7 @@ namespace EstructuraDeDatos
         class Nodo
         {
             public int info;
+			public int nivel;
             public Nodo izq, der;
         }
         private Nodo raiz;
@@ -64,6 +65,32 @@ namespace EstructuraDeDatos
             }
             return false;
         }
+
+		private Nodo Buscar(int info) 
+		{
+			Nodo reco = raiz;
+			while (reco != null)
+			{
+				if (info == reco.info)
+					return reco;
+				else
+					if (info > reco.info)
+						reco = reco.der;
+					else
+						reco = reco.izq;
+			}
+			return null;
+		}
+
+		public void BuscarValor(int info)
+		{
+			Nodo nodo = Buscar (info);
+			if (nodo != null) {
+				Console.WriteLine ("Nodo: " + nodo.info + " Nivel: " + nodo.nivel);
+			} else {
+				Console.WriteLine ("Valor no encontrado");
+			}
+		}
 
         private void ImprimirEntre(Nodo reco)
         {
@@ -138,8 +165,11 @@ namespace EstructuraDeDatos
             if (reco != null)
             {
                 RetornarAltura(reco.izq, nivel + 1);
-                if (nivel > altura)
-                    altura = nivel;
+				if (nivel > altura)
+				{
+					altura = nivel;
+					reco.nivel = nivel;
+				}
                 RetornarAltura(reco.der, nivel + 1);
             }
         }

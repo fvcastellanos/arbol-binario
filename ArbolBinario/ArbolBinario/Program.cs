@@ -7,7 +7,7 @@ namespace ArbolBinario
     {
         static void Main(string[] args)
         {
-            ArbolBinarioOrdenado abo = new ArbolBinarioOrdenado();
+/*            ArbolBinarioOrdenado abo = new ArbolBinarioOrdenado();
             abo.Insertar(100);
             abo.Insertar(50);
             abo.Insertar(25);
@@ -25,7 +25,10 @@ namespace ArbolBinario
             abo.BorrarMenor();
             Console.WriteLine("Luego de borrar el menor:");
             abo.ImprimirEntre();
-            Console.ReadKey();
+            Console.ReadKey();*/
+
+			MenuArbolBinario menu = new MenuArbolBinario ();
+			menu.MenuPrincipal ();
         }
     }
 }
