@@ -42,16 +42,18 @@ namespace ArbolBinario
 
 				switch (opc)
 				{
-				case 1:
-					arbolBinario.Insertar (solicitarNumero ());
+                    case 1:
+					    arbolBinario.Insertar (solicitarNumero ());
 						break;
 					case 2:
+                        arbolBinario.Borrar(solicitarNumero());
+                        Console.WriteLine("Elemento borrado");
 						break;
-				case 3:
-					arbolBinario.BuscarValor (solicitarNumero ());
+				    case 3:
+					    arbolBinario.BuscarValor (solicitarNumero ());
 						break;
-				case 4:
-					arbolBinario.ImprimirEntreConNivel ();
+				    case 4:
+					    arbolBinario.ImprimirEntreConNivel ();
 					break;
 				}
 
